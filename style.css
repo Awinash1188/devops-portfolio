@@ -202,3 +202,46 @@ padding:30px;
 background:#020617;
 color:#94a3b8;
 }
+/* GITHUB REPO CARDS */
+
+.repo-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-top:30px;
+
+}
+
+.repo-card{
+
+background:#0f172a;
+border:1px solid #1e293b;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+
+}
+
+.repo-card:hover{
+
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(56,189,248,0.25);
+
+}
+
+.repo-card h3{
+
+color:#38bdf8;
+margin-bottom:10px;
+
+}
+
+.repo-card a{
+
+color:#22c55e;
+text-decoration:none;
+font-size:14px;
+
+}
+
