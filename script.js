@@ -1,4 +1,3 @@
-
 function scrollToProjects(){
 
 document.getElementById("projects").scrollIntoView({
@@ -7,18 +6,15 @@ behavior:"smooth"
 
 }
 
-
-/* TYPING ANIMATION */
+/* TYPING HERO ANIMATION */
 
 var typed = new Typed("#typing", {
 
-strings: [
-
+strings:[
 "8+ Years Experience",
 "AWS • Docker • Kubernetes",
 "Linux • Python • Automation",
 "Building Scalable Cloud Infrastructure"
-
 ],
 
 typeSpeed:60,
@@ -29,7 +25,7 @@ loop:true
 });
 
 
-/* PARTICLES BACKGROUND */
+/* PARTICLE BACKGROUND */
 
 particlesJS("particles-js",{
 
@@ -61,14 +57,62 @@ speed:2
 },
 
 interactivity:{
-
 events:{
 onhover:{
 enable:true,
 mode:"repulse"
 }
 }
-
 }
 
 });
+
+
+/* TERMINAL ANIMATION */
+
+const commands=[
+
+"$ aws configure",
+"$ docker build -t devops-app .",
+"$ docker run -p 80:80 devops-app",
+"$ kubectl apply -f deployment.yaml",
+"$ kubectl get pods",
+"$ terraform init",
+"$ terraform apply",
+"$ echo 'Deployment Successful 🚀'"
+
+];
+
+let line=0;
+let char=0;
+
+function typeTerminal(){
+
+if(line<commands.length){
+
+if(char<commands[line].length){
+
+document.getElementById("terminal-output").innerHTML+=commands[line].charAt(char);
+
+char++;
+
+setTimeout(typeTerminal,40);
+
+}
+
+else{
+
+document.getElementById("terminal-output").innerHTML+="<br>";
+
+line++;
+char=0;
+
+setTimeout(typeTerminal,400);
+
+}
+
+}
+
+}
+
+typeTerminal();
